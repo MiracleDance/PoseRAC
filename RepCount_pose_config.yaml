@@ -1,0 +1,28 @@
+dataset_name: RepCount_pose
+train_split: ['train']
+test_split: ['test']
+dataset: {
+  dataset_root_dir: './RepCount_pose',
+  csv_label_path: 'all_action.csv',
+}
+PoseRAC: {
+  seed: 42,
+  dim: 99,
+  heads: 9,
+  enc_layer: 6,
+  all_key_points: 99,
+  learning_rate: 0.001,
+  alpha: 0.01
+}
+Action_trigger: {
+  enter_threshold: 0.78,
+  exit_threshold: 0.4,
+  momentum: 0.4
+}
+trainer: {
+  max_epochs: 20,
+  auto_lr_find: True,
+  accelerator: 'gpu',
+  devices: 1
+}
+save_ckpt_path: 'best_weights_PoseRAC_3_13_2.pth'
