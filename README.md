@@ -40,6 +40,8 @@ We propose a novel **Pose Saliency Annotation** that addresses the lack of annot
 </p>
 
 #### Download Videos and Pose-level Annotations
+[this Google Drive link](https://drive.google.com/file/d/1k9LLzOsJVh6ACXSX8iKbGNxTY9-L6X_x/view?usp=sharing)
+
 
 ## Code overview
 * After preparing the dataset above, the folder structure should look like:
@@ -64,8 +66,11 @@ This folder
 │    │	 └───train/
 │    │   └───valid/
 ```
+It is worth mentioning that in the *./RepCount_pose/annotation/* directory, there are two files for training, where *pose_train.csv* is the annotation applied to our pose-level method, while *video_train.csv* is applied to the common video-level method. Other than that, there is no difference between our *RepCount-pose* and *RepCount*, including videos, test annotations, etc.
 
 ## Usage
+### Install
+Please refer to INSTALL.md for installation.
 
 ## Citation
 If you find the project or the new version dataset is useful, please consider citing the paper.
