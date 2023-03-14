@@ -42,6 +42,22 @@ We propose a novel **Pose Saliency Annotation** that addresses the lack of annot
 #### Download Videos and Pose-level Annotations
 
 ## Code overview
+* After preparing the dataset above, the folder structure should look like:
+```
+This folder
+│   README.md
+│   ...  
+│
+└───data/
+│    └───thumos/
+│    │	 └───annotations
+│    │	 └───i3d_features   
+│    └───...
+|
+└───libs
+│
+│   ...
+```
 
 ## Usage
 
