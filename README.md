@@ -15,12 +15,33 @@ Meanwhile, the current datasets lack annotations to support pose-level methods, 
 
 More details about the principles and techniques of our work can be found in the paper. Thanks!
 
+Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the-art performance on *RepCount*, far outperforming all current methods, **with an OBO metric of 0.56 compared to 0.29 of previous state-of-the-art TransRAC!** Moreover, PoseRAC has a exaggerated running speed, which takes only 20 minutes to train on a single GPU, and it is even so lightweight to train in only one hour and a half on a CPU, which is unimaginable in previous video-level methods. Our method is also very fast during inference, which is almost 10x faster than the previous state-of-the-art method TransRAC on the average speed per frame.
+
+
+|        Methods       |  MAE $\downarrow$  |  OBO $\uparrow$ | Time(ms) |
+|:--------------------:|:-----:|:-----:|:--------:|
+|        RepNet        | 0.995 | 0.013 |    100   |
+|          X3D         | 0.911 | 0.106 |    220   |
+|     Zhang et al.     | 0.879 | 0.155 |    225   |
+|         TANet        | 0.662 | 0.099 |    187   |
+| VideoSwinTransformer | 0.576 | 0.132 |    149   |
+|     Huang et al.     | 0.527 | 0.159 |    156   |
+|       TransRAC       | 0.443 | 0.291 |    200   |
+|     **PoseRAC(Ours)**    | **0.236** | **0.560** |    **20**    |
+
+
 ## News
 
-## RepCount-pose Dataset
-We propose a novel **Pose Saliency Annotation** that addresses the lack of annotations for salient poses in current datasets. As figure below shows, we pre-define two salient poses for each action and annotate the frame indices where these poses occur for all videos in the training set, creating new annotation files for our pose-level method to train on. We apply this approach to *RepCount*, and create a new annotated version called ***RepCount-pose***.
+## RepCount-pose: A new version of RepCount dataset with pose-level annotations
+We propose a novel **Pose Saliency Annotation** that addresses the lack of annotations for salient poses in current datasets. As figure below shows, take front raise action as an example, we pre-define two salient poses for each action and annotate the frame indices where these poses occur for all videos in the training set, creating new annotation files for our pose-level method to train on. We apply this approach to *RepCount*, and create a new annotated version called ***RepCount-pose***.
 
-## Code Overview
+<p align="center">
+  <img src="images/PSA.jpg", width=900></a>
+</p>
+
+#### Download Videos and Pose-level Annotations
+
+## Code overview
 
 ## Usage
 
