@@ -1,5 +1,7 @@
 # PoseRAC: Pose Saliency Transformer for Repetitive Action Counting
 Here is the official implementation for paper "PoseRAC: Pose Saliency Transformer for Repetitive Action Counting"
+
+![image]
 ## Introduction
 This code repo implements PoseRAC, the first pose-level network for Repetitive Action Counting. 
 
