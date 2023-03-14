@@ -15,4 +15,11 @@ Meanwhile, the current datasets lack annotations to support pose-level methods, 
 
 More details about the principles and techniques of our work can be found in the paper. Thanks!
 
+## News
 
+## Code Overview
+
+## Usage
+
+## Citation
+If you find the project or the new version dataset is useful, please consider citing the paper.
