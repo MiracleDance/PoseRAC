@@ -6,6 +6,11 @@ Here is the official implementation for paper "PoseRAC: Pose Saliency Transforme
   <img src="images/Squat_demo.gif", width=380></a>
 </p>
 
+Our PoseRAC achieves a substantial improvement over the previous state-of-the-art in performance and speed, even having significantly fewer model parameters, which represented by the sizes of bubbles.
+<p align="center">
+  <img src="images/bubble.jpg", width=500></a>
+</p>
+
 ## Introduction
 This code repo implements PoseRAC, the first pose-level network for Repetitive Action Counting. 
 
@@ -28,7 +33,6 @@ Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the
 |     Huang et al.     | 0.527 | 0.159 |    156   |
 |       TransRAC       | 0.443 | 0.291 |    200   |
 |     **PoseRAC(Ours)**    | **0.236** | **0.560** |    **20**    |
-
 
 ## RepCount-pose: A new version of RepCount dataset with pose-level annotations
 We propose a novel **Pose Saliency Annotation** that addresses the lack of annotations for salient poses in current datasets. As figure below shows, take front raise action as an example, we pre-define two salient poses for each action and annotate the frame indices where these poses occur for all videos in the training set, creating new annotation files for our pose-level method to train on. We apply this approach to *RepCount*, and create a new annotated version called ***RepCount-pose***.
