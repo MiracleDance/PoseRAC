@@ -111,11 +111,7 @@ def main(args):
     trainer = pl.Trainer(callbacks=[early_stop_callback, ckpt_callback], max_epochs=config['trainer']['max_epochs'],
                          auto_lr_find=config['trainer']['auto_lr_find'], accelerator=config['trainer']['accelerator'],
                          devices=config['trainer']['devices'], strategy='ddp')
-
-    # trainer = pl.Trainer(callbacks=[early_stop_callback, ckpt_callback],
-    #                      max_epochs=config['trainer']['max_epochs'],
-    #                      accelerator=config['trainer']['accelerator'], devices=config['trainer']['devices'],
-    #                      strategy='ddp')
+    
     trainer.tune(model)
     print('Learning rate:', model.learning_rate)
     trainer.fit(model)
