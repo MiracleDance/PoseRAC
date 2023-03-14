@@ -4,6 +4,9 @@ import csv
 from mediapipe.python.solutions import pose as mp_pose
 import numpy as np
 
+
+# For the selected key frames, we use the pose estimation network to extract the poses.
+# For each pose, we use 33 key points to represent it, and each key point has 3 dimensions.
 def _generate_for_train(root_dir):
     data_folder = os.path.join(root_dir, 'extracted')
     out_csv_dir = os.path.join(root_dir, 'annotation_pose')
@@ -23,9 +26,9 @@ def _generate_for_train(root_dir):
                 print(action_type)
                 if '.DS_Store' in action_type:
                     continue
-                for start_end in os.listdir(sub_sub_folder):
-                    sub_sub_sub_folder = os.path.join(sub_sub_folder, start_end)
-                    if '.DS_Store' in start_end:
+                for salient1_2 in os.listdir(sub_sub_folder):
+                    sub_sub_sub_folder = os.path.join(sub_sub_folder, salient1_2)
+                    if '.DS_Store' in salient1_2:
                         continue
                     for video_name in os.listdir(sub_sub_sub_folder):
                         video_dir = os.path.join(sub_sub_sub_folder, video_name)
@@ -37,7 +40,7 @@ def _generate_for_train(root_dir):
                             if '.jpg' not in single_path:
                                 continue
                             image_path = os.path.join(video_dir, single_path)
-                            base_path = os.path.join(train_type, action_type, start_end,  video_name, single_path)
+                            base_path = os.path.join(train_type, action_type, salient1_2,  video_name, single_path)
                             input_frame = cv2.imread(image_path)
                             input_frame = cv2.cvtColor(input_frame, cv2.COLOR_BGR2RGB)
 
@@ -54,6 +57,5 @@ def _generate_for_train(root_dir):
                                     [[lmk.x * frame_width, lmk.y * frame_height, lmk.z * frame_width]
                                      for lmk in pose_landmarks.landmark],
                                     dtype=np.float32)
-                                assert pose_landmarks.shape == (33, 3), 'Unexpected landmarks shape: {}'.format(
-                                    pose_landmarks.shape)
+                                assert pose_landmarks.shape == (33, 3), 'Unexpected landmarks shape: {}'.format(pose_landmarks.shape)
                                 csv_out_writer.writerow([base_path, action_type] + pose_landmarks.flatten().astype(str).tolist())
