@@ -1,7 +1,11 @@
 # PoseRAC: Pose Saliency Transformer for Repetitive Action Counting
 Here is the official implementation for paper "PoseRAC: Pose Saliency Transformer for Repetitive Action Counting"
 
-![image]
+<p align="center">
+<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/MyVideo_1.gif?raw=true", width=500></a>  
+<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/MyVideo_1.gif?raw=true", width=500></a>
+</p>
+
 ## Introduction
 This code repo implements PoseRAC, the first pose-level network for Repetitive Action Counting. 
 
