@@ -2,8 +2,8 @@
 Here is the official implementation for paper "PoseRAC: Pose Saliency Transformer for Repetitive Action Counting"
 
 <p align="center">
-<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/MyVideo_1.gif?raw=true", width=360></a>  
-<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/MyVideo_2.gif?raw=true", width=360></a>
+<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/JumpJack_demo.gif?raw=true", width=380></a>  
+<img src="https://github.com/MiracleDance/PoseRAC/blob/main/images/Squat_demo.gif?raw=true", width=380></a>
 </p>
 
 ## Introduction
@@ -15,4 +15,11 @@ Meanwhile, the current datasets lack annotations to support pose-level methods, 
 
 More details about the principles and techniques of our work can be found in the paper. Thanks!
 
+## News
 
+## Code Overview
+
+## Usage
+
+## Citation
+If you find the project or the new version dataset is useful, please consider citing the paper.
