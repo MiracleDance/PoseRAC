@@ -13,7 +13,7 @@ Repetitive action counting aims to count the number of repetitive actions in a v
 
 Meanwhile, the current datasets lack annotations to support pose-level methods, so we propose **Pose Saliency Annotation** to re-annotate the current best dataset *RepCount* to obtain the most representative poses for actions. We augment it with pose-level annotations, and create a new version: ***RepCount-pose***, which can be used by all future pose-level methods. We also make such enhancements on *UCFRep*, but this dataset lacks fine-grained annotations compared to *RepCount*, and has fewer actions for the healthcare and fitness fields, so we focus on the improvement of the *RepCount* dataset.
 
-More details about the principles and techniques of our work can be found in the paper. Thanks!
+***More details about the principles and techniques of our work can be found in the paper. Thanks!***
 
 Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the-art performance on *RepCount*, far outperforming all current methods, **with an OBO metric of 0.56 compared to 0.29 of previous state-of-the-art TransRAC!** Moreover, PoseRAC has a exaggerated running speed, which takes only 20 minutes to train on a single GPU, and it is even so lightweight to train in only one hour and a half on a CPU, which is unimaginable in previous video-level methods. Our method is also very fast during inference, which is almost 10x faster than the previous state-of-the-art method TransRAC on the average speed per frame.
 
@@ -29,8 +29,6 @@ Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the
 |       TransRAC       | 0.443 | 0.291 |    200   |
 |     **PoseRAC(Ours)**    | **0.236** | **0.560** |    **20**    |
 
-
-## News
 
 ## RepCount-pose: A new version of RepCount dataset with pose-level annotations
 We propose a novel **Pose Saliency Annotation** that addresses the lack of annotations for salient poses in current datasets. As figure below shows, take front raise action as an example, we pre-define two salient poses for each action and annotate the frame indices where these poses occur for all videos in the training set, creating new annotation files for our pose-level method to train on. We apply this approach to *RepCount*, and create a new annotated version called ***RepCount-pose***.
@@ -72,5 +70,42 @@ It is worth mentioning that in the *./RepCount_pose/annotation/* directory, ther
 ### Install
 Please refer to INSTALL.md for installation.
 
+### Evaluation
+- [**Optional**] Obtain the pose for each frame of each test video. 
+- As all poses of the test videos have been extracted already by us (see the *./RepCount_pose/test_poses/*), you can ignore this step! Or you can also try this step, the purpose is only to generate all the data in *./RepCount_pose/test_poses/*.
+
+```sh
+python pre_test.py ./RepCount_pose_config.yaml
+```
+
+- Evaluate our PoseRAC with pretrained checkpoint:
+```sh
+python eval.py ./RepCount_pose_config.yaml ./best_weights_PoseRAC.pth
+```
+- Then, you can get the evaluation results:
+```
+MAE:0.2356079854110582, OBO:0.5592105263157895
+```
+
+### Training
+- [**Optional**] Obtain the pose for each frame of each test video. 
+- As all poses of the test videos have been extracted already by us (see the *./RepCount_pose/test_poses/*), you can ignore this step! Or you can also try this step, the purpose is only to generate all the data in *./RepCount_pose/test_poses/*.
+
+```sh
+python pre_test.py ./RepCount_pose_config.yaml
+```
+
+- Evaluate our PoseRAC with pretrained checkpoint:
+```sh
+python eval.py ./RepCount_pose_config.yaml ./best_weights_PoseRAC.pth
+```
+
+### Inference and Visualization
+
+## Contact
+Ziyu Yao (yaozy@stu.pku.edu.cn)
+
+If you have any questions or suggestions, don't hesitate to contact us!
+
 ## Citation
-If you find the project or the new version dataset is useful, please consider citing the paper.
+If you are using our code or new version dataset, please consider citing our paper.
