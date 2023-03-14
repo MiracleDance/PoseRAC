@@ -46,17 +46,23 @@ We propose a novel **Pose Saliency Annotation** that addresses the lack of annot
 ```
 This folder
 │   README.md
-│   ...  
-│
-└───data/
-│    └───thumos/
-│    │	 └───annotations
-│    │	 └───i3d_features   
-│    └───...
-|
-└───libs
-│
+│   best_weights_PoseRAC.pth
+|   train.py
+|   eval.py
 │   ...
+
+└───RepCount_pose/
+│    └───annotation/
+│    │	 └───pose_train.csv
+│    │	 └───test.csv  
+│    │   └───valid.csv 
+│    │   └───video_train.csv
+│    └───original_data/
+│    └───test_poses/
+│    └───video/
+│    │	 └───test/
+│    │	 └───train/
+│    │   └───valid/
 ```
 
 ## Usage
