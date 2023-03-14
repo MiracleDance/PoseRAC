@@ -13,6 +13,7 @@ import yaml
 torch.multiprocessing.set_sharing_strategy('file_system')
 
 
+# Normalization to improve training robustness.
 def normalize_landmarks(all_landmarks):
     x_max = np.expand_dims(np.max(all_landmarks[:,:,0], axis=1), 1)
     x_min = np.expand_dims(np.min(all_landmarks[:,:,0], axis=1), 1)
@@ -31,6 +32,8 @@ def normalize_landmarks(all_landmarks):
     return all_landmarks
 
 
+# For each pose, we use 33 key points to represent it, and each key point has 3 dimensions.
+# Here we obtain the pose information (33*3=99) of each key frame, and set up the label (1 for salient pose I and 0 for salient pose II).
 def obtain_landmark_label(csv_path, all_landmarks, all_labels, label2index, num_classes):
     file_separator=','
     n_landmarks = 33
