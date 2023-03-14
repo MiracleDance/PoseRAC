@@ -3,6 +3,8 @@ import os
 import cv2
 import pandas as pd
 
+
+# Pick out all key frames of each video according to our pose-level annotation.
 def _annotation_transform(root_dir):
     train_type = 'train'
     annotation_name = 'pose_train_all.csv'
@@ -21,10 +23,10 @@ def _annotation_transform(root_dir):
         action_type = df.loc[i, 'type']
         label_tmp = df.values[i][num_idx:].astype(np.float64)
         label_tmp = label_tmp[~np.isnan(label_tmp)].astype(np.int32)
-        start_tmp = label_tmp[::2]
-        end_tmp = label_tmp[1::2]
+        s1_tmp = label_tmp[::2]
+        s2_tmp = label_tmp[1::2]
         assert len(label_tmp) % 2 == 0
-        file2label[filename] = [start_tmp, end_tmp, action_type]
+        file2label[filename] = [s1_tmp, s2_tmp, action_type]
 
     for video_name in file2label:
         video_path = os.path.join(video_dir, video_name)
@@ -38,26 +40,26 @@ def _annotation_transform(root_dir):
                     break
                 frames.append(frame)
         cap.release()
-        start_label, end_label, action_type = file2label[video_name]
+        s1_label, s2_label, action_type = file2label[video_name]
         count = 0
-        for frame_index in start_label:
+        for frame_index in s1_label:
             if frame_index >= len(frames):
                 continue
             frame_ = frames[frame_index]
-            sub_start_save_dir = os.path.join(save_dir, action_type, 'start', video_name)
-            if not os.path.isdir(sub_start_save_dir):
-                os.makedirs(sub_start_save_dir)
-            save_path = os.path.join(sub_start_save_dir, str(count) + '.jpg')
+            sub_s1_save_dir = os.path.join(save_dir, action_type, 'salient1', video_name)
+            if not os.path.isdir(sub_s1_save_dir):
+                os.makedirs(sub_s1_save_dir)
+            save_path = os.path.join(sub_s1_save_dir, str(count) + '.jpg')
             cv2.imwrite(save_path, frame_)
             count += 1
 
-        for frame_index in end_label:
+        for frame_index in s2_label:
             if frame_index >= len(frames):
                 continue
             frame_ = frames[frame_index]
-            sub_start_save_dir = os.path.join(save_dir, action_type, 'end', video_name)
-            if not os.path.isdir(sub_start_save_dir):
-                os.makedirs(sub_start_save_dir)
-            save_path = os.path.join(sub_start_save_dir, str(count) + '.jpg')
+            sub_s2_save_dir = os.path.join(save_dir, action_type, 'salient2', video_name)
+            if not os.path.isdir(sub_s2_save_dir):
+                os.makedirs(sub_s2_save_dir)
+            save_path = os.path.join(sub_s2_save_dir, str(count) + '.jpg')
             cv2.imwrite(save_path, frame_)
             count += 1
