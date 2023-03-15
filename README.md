@@ -19,7 +19,7 @@ Meanwhile, the current datasets lack annotations to support pose-level methods, 
 
 ***More details about the principles and techniques of our work can be found in the paper. Thanks!***
 
-Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the-art performance on *RepCount*, far outperforming all current methods, **with an OBO metric of 0.56 compared to 0.29 of previous state-of-the-art TransRAC!** Moreover, PoseRAC has a exaggerated running speed, which takes only 20 minutes to train on a single GPU, and it is even so lightweight to train in only one hour and a half on a CPU, which is unimaginable in previous video-level methods. Our method is also very fast during inference, which is almost 10x faster than the previous state-of-the-art method TransRAC on the average speed per frame.
+Using Pose Saliency Annotation to train our PoseRAC, we achieve new state-of-the-art performance on *RepCount*, far outperforming all current methods, **with an OBO metric of 0.56 compared to 0.29 of previous state-of-the-art TransRAC!** Moreover, PoseRAC has an exaggerated running speed, which takes only 20 minutes to train on a single GPU, and it is even so lightweight to train in only one hour and a half on a CPU, which is unimaginable in previous video-level methods. Our method is also very fast during inference, which is almost 10x faster than the previous state-of-the-art method TransRAC on the average speed per frame.
 
 
 |        Methods       |  MAE $\downarrow$  |  OBO $\uparrow$ | Time(ms) |
