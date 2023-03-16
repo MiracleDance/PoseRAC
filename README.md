@@ -1,4 +1,9 @@
 # PoseRAC: Pose Saliency Transformer for Repetitive Action Counting
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2303.08450"><img src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
+</p>
+
 Here is the official implementation for paper "PoseRAC: Pose Saliency Transformer for Repetitive Action Counting"
 
 <p align="center">
