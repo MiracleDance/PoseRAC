@@ -4,7 +4,7 @@
   <a href="https://arxiv.org/abs/2303.08450"><img src="https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg" ></a> </h1> 
 </p>
 
-Here is the official implementation for paper "PoseRAC: Pose Saliency Transformer for Repetitive Action Counting"
+Here is the official implementation for paper <a href="https://arxiv.org/abs/2303.08450">PoseRAC: Pose Saliency Transformer for Repetitive Action Counting</a>.
 
 <p align="center">
   <a> <img src="images/JumpJack_demo.gif" width='42%'></a>   <a> <img src="images/Squat_demo.gif" width='42%'></a>
