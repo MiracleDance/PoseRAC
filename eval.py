@@ -137,9 +137,9 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Evaluate our PoseRAC')
-    parser.add_argument('config', type=str, metavar='DIR',
+    parser.add_argument('--config', type=str, metavar='DIR',
                         help='path to a config file')
-    parser.add_argument('ckpt', type=str, metavar='DIR',
+    parser.add_argument('--ckpt', type=str, metavar='DIR',
                         help='path to a checkpoint')
     args = parser.parse_args()
     main(args)
