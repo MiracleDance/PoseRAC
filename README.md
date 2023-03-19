@@ -121,3 +121,11 @@ If you have any questions or suggestions, don't hesitate to contact us!
 
 ## Citation
 If you are using our code or new version dataset, please consider citing our paper.
+```
+@article{yao2023poserac,
+  title={PoseRAC: Pose Saliency Transformer for Repetitive Action Counting},
+  author={Yao, Ziyu and Cheng, Xuxin and Zou, Yuexian},
+  journal={arXiv preprint arXiv:2303.08450},
+  year={2023}
+}
+```
