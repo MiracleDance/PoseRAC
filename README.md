@@ -83,12 +83,12 @@ Please refer to INSTALL.md for installation.
 - As all poses of the test videos have been extracted already by us (see the *./RepCount_pose/test_poses/*), you can ignore this step! Or you can also try this step, the purpose is only to generate all the data in *./RepCount_pose/test_poses/*.
 
 ```sh
-python pre_test.py ./RepCount_pose_config.yaml
+python pre_test.py --config ./RepCount_pose_config.yaml
 ```
 
 - Evaluate our PoseRAC with pretrained checkpoint:
 ```sh
-python eval.py ./RepCount_pose_config.yaml ./best_weights_PoseRAC.pth
+python eval.py --config ./RepCount_pose_config.yaml --ckpt ./best_weights_PoseRAC.pth
 ```
 - Then, you can get the evaluation results:
 ```
@@ -99,17 +99,17 @@ MAE:0.2356079854110582, OBO:0.5592105263157895
 - Preprocessing before training. According to the pose-level annotation, the key frames of each video are determined, and we extract the poses of these frames and get their corresponding classes.
 
 ```sh
-python pre_train.py ./RepCount_pose_config.yaml
+python pre_train.py --config ./RepCount_pose_config.yaml
 ```
 
 - Train the model:
 ```sh
-python train.py ./RepCount_pose_config.yaml
+python train.py --config ./RepCount_pose_config.yaml
 ```
 
 ### Inference and Visualization
 ```sh
-python inference_and_visualization.py ./RepCount_pose_config.yaml ./best_weights_PoseRAC.pth
+python inference_and_visualization.py --config ./RepCount_pose_config.yaml --ckpt ./best_weights_PoseRAC.pth
 ```
 
 You can also train from scratch to get a set of model weights for evaluation and inference.
