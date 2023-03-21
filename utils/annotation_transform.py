@@ -7,7 +7,7 @@ import pandas as pd
 # Pick out all key frames of each video according to our pose-level annotation.
 def _annotation_transform(root_dir):
     train_type = 'train'
-    annotation_name = 'pose_train_all.csv'
+    annotation_name = 'pose_train.csv'
     video_dir = os.path.join(root_dir, 'video', train_type)
     label_filename = os.path.join(root_dir, 'annotation', annotation_name)
     train_save_dir = os.path.join(root_dir, 'extracted')
