@@ -25,4 +25,4 @@ trainer: {
   accelerator: 'gpu',
   devices: 1
 }
-save_ckpt_path: 'best_weights_PoseRAC_3_13_2.pth'
+save_ckpt_path: 'new_weights.pth'
