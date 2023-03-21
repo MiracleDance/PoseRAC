@@ -77,7 +77,7 @@ def main(args):
     csv_label_path = config['dataset']['csv_label_path']
     root_dir = config['dataset']['dataset_root_dir']
 
-    train_csv = os.path.join(root_dir, 'annotation', 'pose_train.csv')
+    train_csv = os.path.join(root_dir, 'annotation_pose', 'train.csv')
 
     label_pd = pd.read_csv(csv_label_path)
     index_label_dict = {}
