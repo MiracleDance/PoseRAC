@@ -48,7 +48,7 @@ def obtain_landmark_label(csv_path, all_landmarks, all_labels, label2index, num_
 
             start_str = row[0].split('/')[-3]
             label_np = np.zeros(num_classes)
-            if start_str == 'start':
+            if start_str == 'salient1':
                 label_np[label] = 1
             all_labels.append(label_np)
     return all_landmarks, all_labels
