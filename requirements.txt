@@ -1,6 +1,6 @@
 pyyaml
-pytorch_lightning
-pytorch_metric_learning
+pytorch-lightning
+pytorch-metric-learning
 pandas
 mediapipe
 opencv-python
