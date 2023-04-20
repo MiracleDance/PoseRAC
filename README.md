@@ -80,7 +80,10 @@ It is worth mentioning that in the *./RepCount_pose/annotation/* directory, ther
 
 ## Usage
 ### Install
-Please refer to INSTALL.md for installation.
+Please refer to INSTALL.md for installation, or you can use:
+```sh
+pip install -r requirement.txt
+```
 
 ### Evaluation
 - [**Optional**] Obtain the pose for each frame of each test video. 
